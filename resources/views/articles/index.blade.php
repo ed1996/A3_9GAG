@@ -25,6 +25,9 @@
                                 <img src="{{ asset('uploads/article_pictures/' . $article->picture) }}" alt=""><br>
                             @endif
 
+                                @include('components.share', ['url' => route('article.show', ['id' => $article->id])])<br>
+
+
                                 @foreach ($article->likes as $user)
                                     {{ $user->name }} likes this !
                                 @endforeach
@@ -40,12 +43,12 @@
                                 Voir ce Post
                             </a>
 
+
+
+
                         @empty
                             Rien du tout
                         @endforelse
-                    </div>
-                    <div class="text-center">
-                        {{$articles->links()}}
                     </div>
                 </div>
             </div>

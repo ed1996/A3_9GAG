@@ -41,6 +41,8 @@
                                     <a href="{{ route('article.like', $article->id) }}">Like this!</a><br>
                                 @endif
                             </p>
+                            @include('components.share', ['url' => route('article.show', ['id' => $article->id])])<br>
+
 
                             <a href="{{route('article.index')}}">Retour</a><br>
                             <a href="{{ route('article.edit', $article->id) }}" class="btn btn-xs btn-primary"><span class="glyphicon glyphicon-pencil"></span></a>
