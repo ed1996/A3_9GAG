@@ -21,3 +21,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 Route::resource('/article', 'ArticleController');
+Route::get('article/like/{id}', ['as' => 'article.like', 'uses' => 'LikeController@likeArticle']);

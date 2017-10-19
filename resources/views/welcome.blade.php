@@ -78,17 +78,13 @@
             @endif
 
             <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
+                <h1>File Upload</h1>
+                <form action="{{ URL::to('upload') }}" method="post" enctype="multipart/form-data">
+                    <label>Select image to upload:</label>
+                    <input type="file" name="file" id="file">
+                    <input type="submit" value="Upload" name="submit">
+                    <input type="hidden" value="{{ csrf_token() }}" name="_token">
+                </form>
             </div>
         </div>
     </body>

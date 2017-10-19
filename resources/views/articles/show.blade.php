@@ -29,6 +29,18 @@
                             @endif
 
                         </p>
+                            <p>
+                                @foreach ($article->likes as $user)
+                                    {{ $user->name }} likes this !
+                                @endforeach
+
+
+                                @if ($article->isLiked)
+                                    <a href="{{ route('article.like', $article->id) }}">Unlike</a><br>
+                                @else
+                                    <a href="{{ route('article.like', $article->id) }}">Like this!</a><br>
+                                @endif
+                            </p>
 
                             <a href="{{route('article.index')}}">Retour</a><br>
                             <a href="{{ route('article.edit', $article->id) }}" class="btn btn-xs btn-primary"><span class="glyphicon glyphicon-pencil"></span></a>

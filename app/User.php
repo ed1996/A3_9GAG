@@ -30,4 +30,9 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\Article');
     }
+
+    public function likedPosts()
+    {
+        return $this->morphedByMany('App\Article', 'likeable')->whereDeletedAt(null);
+    }
 }

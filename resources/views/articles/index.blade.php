@@ -25,6 +25,17 @@
                                 <img src="{{ asset('uploads/article_pictures/' . $article->picture) }}" alt=""><br>
                             @endif
 
+                                @foreach ($article->likes as $user)
+                                    {{ $user->name }} likes this !
+                                @endforeach
+
+
+                                @if ($article->isLiked)
+                                    <a href="{{ route('article.like', $article->id) }}">Unlike</a><br>
+                                @else
+                                    <a href="{{ route('article.like', $article->id) }}">Like this!</a><br>
+                                @endif
+
                             <a href="{{route('article.show', ['id' => $article->id])}}">
                                 Voir ce Post
                             </a>
