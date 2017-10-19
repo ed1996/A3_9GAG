@@ -19,5 +19,5 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('imageUpload', ['as'=>'imageUpload', 'uses'=>'ImageController@index']);
-Route::put('imageUpload', ['as'=>'imageUploadFile', 'uses'=>'ImageController@uploadFiles']);
+
+Route::resource('/article', 'ArticleController');
