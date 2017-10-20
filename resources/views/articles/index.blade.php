@@ -24,11 +24,11 @@
                                 <img src="{{ asset('uploads/article_pictures/' . $article->picture) }}" alt=""><br>
                             @endif
 
-
+                            <p>Les personnes qui ont aimées ce post :
                                 @foreach ($article->likes as $user)
                                     {{ $user->name }} likes this !
                                 @endforeach
-
+                            </p>
                                 @include('components.share', ['url' => route('article.show', ['id' => $article->id])])<br>
 
 
