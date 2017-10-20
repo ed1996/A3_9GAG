@@ -45,19 +45,16 @@
                                 Voir ce Post
                             </a>
 
-<<<<<<< Updated upstream
-=======
+
 
                                 <hr>
 
->>>>>>> Stashed changes
+
                         @empty
                             Rien du tout
                         @endforelse
                     </div>
-                    <div class="text-center">
-                        {{$articles->links()}}
-                    </div>
+
                 </div>
 
             </div>
