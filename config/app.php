@@ -165,6 +165,8 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
+        'Collective\Html\HtmlServiceProvider',
+
 
         /*
          * Package Service Providers...

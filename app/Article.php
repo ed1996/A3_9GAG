@@ -33,4 +33,8 @@ class Article extends Model
         $like = $this->likes()->whereUserId(Auth::id())->first();
         return (!is_null($like)) ? true : false;
     }
+    public function comments()
+    {
+        return $this->hasMany('App\Comment');
+    }
 }
