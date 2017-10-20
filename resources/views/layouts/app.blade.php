@@ -201,12 +201,12 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#myPage">Logo</a>
+            <a class="navbar-brand" href="{{ url('/article') }}">Logo</a>
         </div>
         @auth
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav navbar-right">
-                <a href="{{ url('/article') }} class="icon-bar">Home</a>
+                <a href="{{ url('/') }} class="">Home</a>
                 <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">{{ csrf_field() }}</form>
                 @else
@@ -222,15 +222,8 @@
 
 <div class="jumbotron text-center">
     <h1>MemeGang</h1>
-    <p>We specialize in blablabla</p>
-    <form>
-        <div class="input-group">
-            <input type="email" class="form-control" size="50" placeholder="Email Address" required>
-            <div class="input-group-btn">
-                <button type="button" class="btn btn-danger">Subscribe</button>
-            </div>
-        </div>
-    </form>
+    <p>Memes for the world</p>
+
 </div>
 
 

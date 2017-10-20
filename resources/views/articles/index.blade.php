@@ -48,14 +48,16 @@
 
 
                                 <hr>
+                            @empty
+                                Rien du tout
+                            @endforelse
 
-
-                        @empty
-                            Rien du tout
-                        @endforelse
                     </div>
 
+
+
                 </div>
+
 
             </div>
         </div>
