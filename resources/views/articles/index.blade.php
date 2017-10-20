@@ -24,10 +24,16 @@
                                 <img src="{{ asset('uploads/article_pictures/' . $article->picture) }}" alt=""><br>
                             @endif
 
+
                                 @foreach ($article->likes as $user)
                                     {{ $user->name }} likes this !
                                 @endforeach
 
+                                @include('components.share', ['url' => route('article.show', ['id' => $article->id])])<br>
+
+
+
+                            {{ $article->likes->count() }} Likes<br>
 
                                 @if ($article->isLiked)
                                     <a href="{{ route('article.like', $article->id) }}">Unlike</a><br>
