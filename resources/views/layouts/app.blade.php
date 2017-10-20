@@ -204,6 +204,7 @@
             <a class="navbar-brand" href="{{ url('/article') }}">Logo</a>
         </div>
         @auth
+
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="{{ route('article.index') }} class="icon-bar">Home</a></li>
