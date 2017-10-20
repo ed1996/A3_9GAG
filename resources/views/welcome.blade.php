@@ -15,7 +15,10 @@
                 </div>
             @endif
 
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
         </div>
     </body>
 </html>

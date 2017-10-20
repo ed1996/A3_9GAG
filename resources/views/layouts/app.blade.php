@@ -206,8 +206,13 @@
         @auth
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav navbar-right">
+<<<<<<< Updated upstream
                 <a href="{{ url('/') }} class="">Home</a>
                 <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+=======
+                <li><a href="{{ route('article.index') }} class="icon-bar">Home</a></li>
+                <li><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
+>>>>>>> Stashed changes
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">{{ csrf_field() }}</form>
                 @else
                 <a href="{{ route('login') }}" class="icon-bar">Login</a>

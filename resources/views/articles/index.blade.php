@@ -46,7 +46,6 @@
                             </a>
 
 
-
                                 <hr>
                             @empty
                                 Rien du tout
