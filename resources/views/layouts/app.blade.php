@@ -191,6 +191,7 @@
     </style>
 </head>
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+@if (Route::has('login'))
 
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
@@ -202,17 +203,22 @@
             </button>
             <a class="navbar-brand" href="#myPage">Logo</a>
         </div>
+        @auth
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#about">ABOUT</a></li>
-                <li><a href="#services">SERVICES</a></li>
-                <li><a href="#portfolio">PORTFOLIO</a></li>
-                <li><a href="#pricing">PRICING</a></li>
-                <li><a href="#contact">CONTACT</a></li>
+                <a href="{{ url('/article') }} class="icon-bar">Home</a>
+                <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">{{ csrf_field() }}</form>
+                @else
+                <a href="{{ route('login') }}" class="icon-bar">Login</a>
+                <a href="{{ route('register') }}" class="icon-bar">Register</a>
+
             </ul>
         </div>
+        @endauth
     </div>
 </nav>
+@endif
 
 <div class="jumbotron text-center">
     <h1>MemeGang</h1>

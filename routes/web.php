@@ -11,13 +11,11 @@
 |
 */
 
-<<<<<<< Updated upstream
+
 Route::get('/', 'ArticleController@index');
-=======
-Route::get('/', function () {
-    return view('ArticleController@index');
-});
->>>>>>> Stashed changes
+
+
+
 
 Auth::routes();
 
