@@ -12,6 +12,11 @@
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
                     <div class="panel-heading" style="text-align: center;"><h3>{{ $article->title }}</h3></div>
+<<<<<<< HEAD
+=======
+                    
+
+>>>>>>> master
                     <div class="panel-body">
                             @if(!$article->picture)
                                 <img src="http://placehold.it/50x50"><br>
