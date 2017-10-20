@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
-                    <div style="text-align: center;"><h1>Dashboard :</h1></div>
+                    <div style="text-align: center;"><h1>Fil d'actualité :</h1></div>
                     <div class="panel-heading"> <a style="margin-left: 300px;" href="{{route('article.create')}}">Ajouter un Post</a></div>
 
                     <div class="panel-body">
@@ -16,8 +16,7 @@
                             </div>
                         @endif
                         @forelse($articles as $article)
-                            <h1>{{ $article->title }}</h1>
-                                <br>
+                            <h3>{{ $article->title }}</h3>
 
                             @if(!$article->picture)
                                 <img src="http://placehold.it/50x50"><br>
@@ -40,6 +39,12 @@
                                 Voir ce Post
                             </a>
 
+<<<<<<< Updated upstream
+=======
+
+                                <hr>
+
+>>>>>>> Stashed changes
                         @empty
                             Rien du tout
                         @endforelse
@@ -48,6 +53,7 @@
                         {{$articles->links()}}
                     </div>
                 </div>
+
             </div>
         </div>
     </div>
