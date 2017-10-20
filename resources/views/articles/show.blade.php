@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section('content')
     <div class="container">
         <div class="row">
@@ -66,8 +65,10 @@
                                             <td>{{ $comment->name }}</td>
                                             <td>{{ $comment->comment }}</td>
                                             <td>
+                                                @if( $comment->user_id == Auth::user()->id)
                                                 <a href="{{ route('comments.edit', $comment->id) }}" class="btn btn-xs btn-primary"><span class="glyphicon glyphicon-pencil"></span></a>
                                                 <a href="{{ route('comments.delete', $comment->id) }}" class="btn btn-xs btn-danger"><span class="glyphicon glyphicon-trash"></span></a>
+                                                    @endif
                                             </td>
                                         </tr>
                                     @endforeach

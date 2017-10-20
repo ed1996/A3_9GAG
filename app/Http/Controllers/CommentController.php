@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Requests;
 use App\Comment;
 use App\Article;
+use App\User;
 use Session;
 
 class CommentController extends Controller
@@ -34,6 +36,7 @@ class CommentController extends Controller
         $comment->email = $request->email;
         $comment->comment = $request->comment;
         $comment->approved = true;
+        $comment->user_id = Auth::user()->id;
         $comment->article()->associate($article);
         $comment->save();
         Session::flash('success', 'Votre commentaire a bien été enregistrer');
