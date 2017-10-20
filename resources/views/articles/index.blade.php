@@ -12,8 +12,6 @@
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
                     <div class="panel-heading" style="text-align: center;"><h3>{{ $article->title }}</h3></div>
-                    <div class="panel-heading"> <a style="margin-left: 300px;color:#fff;" href="{{route('article.create')}}">Ajouter un Post</a></div>
-
                     <div class="panel-body">
                             @if(!$article->picture)
                                 <img src="http://placehold.it/50x50"><br>

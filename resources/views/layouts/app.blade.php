@@ -201,21 +201,27 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="{{ url('/article') }}">Logo</a>
+            <a class="navbar-brand" href="{{ url('/article') }}">    <img class="img-responsive" src="http://www.meme.menu/assets/logo_100px_black-6a634bd54a443b4d6f3610edbcf97a9d.png" alt="" style="height:30px;width:30px;">
+            </a>
         </div>
         @auth
-        <div class="collapse navbar-collapse" id="myNavbar">
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="{{ route('article.index') }} class="icon-bar">Home</a></li>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    
                 <li><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
 
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">{{ csrf_field() }}</form>
-                @else
-                <a href="{{ route('login') }}" class="icon-bar">Login</a>
-                <a href="{{ route('register') }}" class="icon-bar">Register</a>
 
-            </ul>
-        </div>
+                </ul>
+            </div>
+            @else
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="{{ route('login') }}" class="">Login</a></li>
+                        <li><a href="{{ route('register') }}" class="">Register</a></li>
+
+                    </ul>
+                </div>
         @endauth
     </div>
 </nav>
@@ -224,10 +230,12 @@
 <div class="jumbotron text-center">
     <h1>MemeGang</h1>
     <p>Memes for the world</p>
+
     <button class="btn-danger btn-lg"><a style="color:#fff;text-decoration: none;" href="{{route('article.create')}}">Ajouter un Post</a>
     </button>
 
 </div>
+
 
 
 @yield('content')
