@@ -17,10 +17,16 @@
                             @if(!$article->picture)
                                 <img src="http://placehold.it/50x50"><br>
                             @else
-                                <img src="{{ asset('uploads/article_pictures/' . $article->picture) }}" alt=""><br>
+                                <a href="{{route('article.show', ['id' => $article->id])}}"><img class="img-responsive text-center" style="height: 100%;width: 100%;" src="{{ asset('uploads/article_pictures/' . $article->picture) }}" alt=""></a><br>
                             @endif
 
-                            <p>Les personnes qui ont aimées ce post :
+                                {{ $article->likes->count() }} Likes
+                                @if ($article->isLiked)
+                                    <a href="{{ route('article.like', $article->id) }}">Unlike</a><br>
+                                @else
+                                    <a href="{{ route('article.like', $article->id) }}">Like this!</a><br>
+                                @endif
+                                <p>Les personnes qui ont aimées ce post :
                                 @foreach ($article->likes as $user)
                                     {{ $user->name }} likes this !
                                 @endforeach
@@ -29,15 +35,11 @@
 
 
 
-                            {{ $article->likes->count() }} Likes<br>
 
-                            @if ($article->isLiked)
-                                <a href="{{ route('article.like', $article->id) }}">Unlike</a><br>
-                            @else
-                                <a href="{{ route('article.like', $article->id) }}">Like this!</a><br>
-                            @endif
 
-                            <a href="{{route('article.show', ['id' => $article->id])}}">
+
+
+
 
                         </div>
 

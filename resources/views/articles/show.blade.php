@@ -2,7 +2,7 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <div class="col-md-8 col-md-offset-2">
+            <div class="col-md-10 col-md-offset-1">
                 <div class="panel panel-default">
                     <div class="panel-heading"><div style="text-align: center;"><h1>{{$article->title}}</h1></div><br>
 
@@ -20,7 +20,7 @@
                         @if(!$article->picture)
                             <img src="http://placehold.it/50x50">
                         @else
-                            <img src="{{ asset('uploads/article_pictures/' . $article->picture) }}" alt="">
+                            <img class="img-responsive text-center" style="height: 100%;width: 100%;" src="{{ asset('uploads/article_pictures/' . $article->picture) }}" alt="">
                         @endif
                         <p>
                             @if($article->user)
@@ -46,7 +46,7 @@
                         <a href="{{ route('article.edit', $article->id) }}" class="btn btn-xs btn-primary"><span class="glyphicon glyphicon-pencil"></span></a>
                         <hr>
 
-                        <div class="row">
+                        <div class="row" style="margin-left: 15px;margin-right: 15px;">
                             <div id="backend-comments" style="margin-top: 50px;">
                                 <h3>Commentaires <small>{{ $article->comments()->count() }} total</small></h3>
 
