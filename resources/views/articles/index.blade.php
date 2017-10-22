@@ -13,11 +13,11 @@
                     <div class="panel panel-default">
                         <div class="panel-heading" style="text-align: center;"><h3>{{ $article->title }}</h3></div>
 
-                        <div class="panel-body">
+                    <div class="panel-body">
                             @if(!$article->picture)
                                 <img src="http://placehold.it/50x50"><br>
                             @else
-                                <a href="{{route('article.show', ['id' => $article->id])}}"><img class="img-responsive text-center" style="height: 100%;width: 100%;" src="{{ asset('uploads/article_pictures/' . $article->picture) }}" alt=""></a><br>
+                                <img src="{{ asset('uploads/article_pictures/' . $article->picture) }}" alt="" width="auto" height="100%" class="center-block"><br>
                             @endif
 
                                 {{ $article->likes->count() }} Likes

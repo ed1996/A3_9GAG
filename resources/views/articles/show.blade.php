@@ -41,6 +41,7 @@
 
                             <p>
                                 {{ $article->likes->count() }} likes
+                            </p>
 
                         <a href="{{route('article.index')}}">Retour</a><br>
                         <a href="{{ route('article.edit', $article->id) }}" class="btn btn-xs btn-primary"><span class="glyphicon glyphicon-pencil"></span></a>
@@ -65,13 +66,21 @@
                                             <td>{{ $comment->name }}</td>
                                             <td>{{ $comment->comment }}</td>
                                             <td>
+<<<<<<< Updated upstream
                                                 @if( $comment->user_id == Auth::user()->id)
                                                 <a href="{{ route('comments.edit', $comment->id) }}" class="btn btn-xs btn-primary"><span class="glyphicon glyphicon-pencil"></span></a>
                                                 <a href="{{ route('comments.delete', $comment->id) }}" class="btn btn-xs btn-danger"><span class="glyphicon glyphicon-trash"></span></a>
                                                     @endif
+=======
+
+                                                <a href="{{ route('comments.edit', $comment->id) }}" class="btn btn-xs btn-primary"><span class="glyphicon glyphicon-pencil"></span></a>
+                                                <a href="{{ route('comments.delete', $comment->id) }}" class="btn btn-xs btn-danger"><span class="glyphicon glyphicon-trash"></span></a>
+
+>>>>>>> Stashed changes
                                             </td>
                                         </tr>
                                     @endforeach
+
                                     </tbody>
                                 </table>
                             </div>
